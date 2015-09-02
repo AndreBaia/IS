@@ -13,12 +13,19 @@ public class PessoaJuridica extends Pessoa {
 		super(id, nome, endereco, telefone);
 		this.cnpj = cnpj;
 		this.dataConstituicao = dataConstituicao;
-		this.site = site;		
+		this.site = site;	
 		
 	}
+		
 	
-	
-	
+	@Override
+	public String toString() {
+		return "PessoaJuridica [cnpj=" + cnpj + ", dataConstituicao=" + dataConstituicao + ", site=" + site
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+
+
 	//Métodos Get e Set
 	public String getCnpj() {
 		return cnpj;
