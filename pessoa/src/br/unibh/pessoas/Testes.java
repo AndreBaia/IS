@@ -27,15 +27,6 @@ public class Testes {
 
 	}
 
-	public void testePessoaFisicaInserir() {
-		PessoaFisicaDAO dao = new PessoaFisicaDAO();
-		PessoaFisica pf = new PessoaFisica(null, "Fulano da Silva", "Rua A", "3133334444", "12345678911",
-				"fulano@gmail.com", new Date(), "M");
-		dao.insert(pf);
-		PessoaFisica pf2 = dao.find("Fulano da Silva");
-		Assert.assertNotNull(pf2);
-
-	}
 	
 
 	@Test
@@ -44,11 +35,40 @@ public class Testes {
 		PessoaFisicaDAO dao = new PessoaFisicaDAO ();
 		PessoaFisica pf = new PessoaFisica(null, "Fulano da Silva", "Rua A", "3133333333", "11122233344",
 				"fulano@gmail.com", new Date(), "M");
-				dao.insert(pf);
+		dao.insert(pf);
+		
 		PessoaFisica pf2 = dao.find("Fulano da Silva");
 		Assert.assertNotNull(pf2);
+		
+		
+		dao.delete(pf2);
 		PessoaFisica pf3 = dao.find("Fulano da Silva");
 		Assert.assertNull(pf3);
+	}
+	
+	@Test
+	public void testePessoaFisicaAtualizar (){
+		
+		PessoaFisicaDAO dao = new PessoaFisicaDAO ();
+		PessoaFisica pf = new PessoaFisica(null, "Ciclano da Silva", "Rua A", "3133333333", "11122233344",
+				"fulano@gmail.com", new Date(), "M");
+		dao.insert(pf);
+		
+		PessoaFisica pf2 = dao.find("Ciclano da Silva");
+		pf2.setNome("Beltrano Da Silva");
+		pf2.setEmail("beltrano@gmail.com");
+		
+		dao.update(pf2);
+		PessoaFisica pf3 = dao.find("Beltrano da Silva");
+		Assert.assertEquals(pf3.getEmail(), "beltrano@gmail.com");
+		Assert.assertNotNull(pf3);
+		
+		dao.delete(pf3);
+		PessoaFisica pf4 = dao.find("Beltrano da Silva");
+		Assert.assertNull(pf4);
+
+		
+		
 	}
 	
 	
