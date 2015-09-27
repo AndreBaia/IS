@@ -4,14 +4,16 @@ import java.util.Date;
 
 public class PessoaJuridica extends Pessoa {
 	private String cnpj;
+	private String email;
 	private Date dataConstituicao;
 	private String site;	
 	
 	//
-	public PessoaJuridica(Long id, String nome, String endereco, String telefone, String cnpj, Date dataConstituicao,
+	public PessoaJuridica(Long id, String nome, String endereco, String telefone, String cnpj, String email, Date dataConstituicao,
 			String site) {
 		super(id, nome, endereco, telefone);
 		this.cnpj = cnpj;
+		this.email = email;
 		this.dataConstituicao = dataConstituicao;
 		this.site = site;	
 		
@@ -20,7 +22,7 @@ public class PessoaJuridica extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "PessoaJuridica [cnpj=" + cnpj + ", dataConstituicao=" + dataConstituicao + ", site=" + site
+		return "PessoaJuridica [cnpj=" + cnpj + ", email="+ email +", dataConstituicao=" + dataConstituicao + ", site=" + site
 				+ ", toString()=" + super.toString() + "]";
 	}
 
@@ -44,6 +46,16 @@ public class PessoaJuridica extends Pessoa {
 	}
 	public void setSite(String site) {
 		this.site = site;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	
