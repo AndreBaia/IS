@@ -24,8 +24,8 @@ public class Testes {
 	@Test
 	public void testePessoaFisicaFind() {
 		PessoaFisicaDAO dao = new PessoaFisicaDAO();
-		PessoaFisica p = dao.find(117L);
-		Assert.assertEquals(p.getNome(), "Valentine Burks");
+		PessoaFisica p = dao.find(14L);
+		Assert.assertEquals(p.getNome(), "Reese P. Gay");
 
 	}
 
@@ -88,8 +88,8 @@ public class Testes {
 	@Test
 	public void testePessoaJuridicaFind() {
 		PessoaJuridicaDAO dao = new PessoaJuridicaDAO();
-		PessoaJuridica p = dao.find(101L);
-		Assert.assertEquals(p.getNome(), "Kuame Hogan");
+		PessoaJuridica p = dao.find(14L);
+		Assert.assertEquals(p.getNome(), "Linda N. Vincent");
 
 	}
 
